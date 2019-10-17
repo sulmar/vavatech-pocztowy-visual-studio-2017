@@ -22,7 +22,7 @@ namespace Pocztowy.Calculators
         /// <summary>
         /// oblicza rabat dla danej strategii
         /// </summary>
-        /// <param name="order"></param>
+        /// <param name="order">szczegóły zamówienia</param>
         /// <returns></returns>
         public decimal CalculateDiscount(Order order)
         {
