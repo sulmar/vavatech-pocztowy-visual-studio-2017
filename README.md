@@ -32,3 +32,22 @@
 | F9   | Dodaj lub usuń pułapkę  |
 | Ctrl + F9  | Wyłącz pułapkę  |
 | Ctrl + Shift + F9  | Usuń wszystkie pułapki  |
+
+
+## Promocje
+
+
+
+1. "Trzeci produkt gratis"
+- wszystkie produkty sa takie same
+- co 3 produkt gratis
+
+2. "Każdy piątek"
+- w kazdy piatek
+- 50% taniej
+
+
+3. Happy Hours
+- jesli pomiedzy 9 - 17 i wartosc zakupow powyzej 100
+- 10 zl taniej 
+
