@@ -25,7 +25,7 @@ namespace Pocztowy.ConsoleClient
 
     public class Woman : Person
     {
-
+        //razdwaczy
     }
 
     
