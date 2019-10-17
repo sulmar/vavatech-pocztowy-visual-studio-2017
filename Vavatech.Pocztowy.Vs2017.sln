@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pocztowy.Calculators", "Poc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pocztowy.UnitTests", "Pocztowy.UnitTests\Pocztowy.UnitTests.csproj", "{A0195E8F-0983-4603-B0D7-B1FE296BF690}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pocztowy.WebApi", "Pocztowy.WebApi\Pocztowy.WebApi.csproj", "{49958791-F22E-489E-8B02-B1DC029A267E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{A0195E8F-0983-4603-B0D7-B1FE296BF690}.Release|x64.Build.0 = Release|Any CPU
 		{A0195E8F-0983-4603-B0D7-B1FE296BF690}.Release|x86.ActiveCfg = Release|Any CPU
 		{A0195E8F-0983-4603-B0D7-B1FE296BF690}.Release|x86.Build.0 = Release|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Debug|x64.Build.0 = Debug|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Debug|x86.Build.0 = Debug|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Release|x64.ActiveCfg = Release|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Release|x64.Build.0 = Release|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Release|x86.ActiveCfg = Release|Any CPU
+		{49958791-F22E-489E-8B02-B1DC029A267E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

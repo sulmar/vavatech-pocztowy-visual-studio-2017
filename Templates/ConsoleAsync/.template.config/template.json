@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Marcin",
+  "classification": ["Common", "Console"],
+  "identify": "ExampleProject.AsyncConsole",
+  "name": "Async Console",
+  "shortName": "consoleasync",
+  "tags": {
+     "language": "C#",
+     "type": "project"
+   }
+
+}
