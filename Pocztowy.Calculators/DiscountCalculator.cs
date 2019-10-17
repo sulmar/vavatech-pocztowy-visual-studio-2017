@@ -7,7 +7,11 @@ namespace Pocztowy.Calculators
     {
         private readonly ICanDiscountStrategy canDiscountStrategy;
         private readonly ICalculateDiscountStrategy calculateDiscountStrategy;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="canDiscountStrategy">implementacja interfejsu can</param>
+        /// <param name="calculateDiscountStrategy">implementacja interfejsu caculate</param>
         public DiscountCalculator(
             ICanDiscountStrategy canDiscountStrategy, 
             ICalculateDiscountStrategy calculateDiscountStrategy)
@@ -15,7 +19,11 @@ namespace Pocztowy.Calculators
             this.canDiscountStrategy = canDiscountStrategy ?? throw new ArgumentNullException(nameof(canDiscountStrategy));
             this.calculateDiscountStrategy = calculateDiscountStrategy ?? throw new ArgumentNullException(nameof(calculateDiscountStrategy));
         }
-
+        /// <summary>
+        /// oblicza rabat dla danej strategii
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
         public decimal CalculateDiscount(Order order)
         {
             if (canDiscountStrategy.CanDiscount(order))

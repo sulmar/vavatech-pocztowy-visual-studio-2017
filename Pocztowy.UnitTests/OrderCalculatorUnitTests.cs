@@ -29,7 +29,7 @@ namespace Pocztowy.UnitTests
 
             decimal result = calculateDiscountStrategy.CalculateDiscount(order);
             // Assert
-            result.Should().Be(expected, "upust");
+            result.Should().Be(expected, "jaki upust????");
 
             // dotnet add package FluentAssertions
         }
@@ -81,6 +81,8 @@ namespace Pocztowy.UnitTests
             result.Should().Be(expected);
         }
 
+        public void GitHubTest_AL(string date, bool expected)
+        {}
 
     }
 }
