@@ -1,4 +1,5 @@
-﻿using Pocztowy.FakeRepositories;
+﻿using Pocztowy.Calculators;
+using Pocztowy.FakeRepositories;
 using Pocztowy.IRepositories;
 using Pocztowy.Models;
 using System;
@@ -27,7 +28,7 @@ namespace Pocztowy.ConsoleClient
 
     }
 
-
+    
 
     class Program
     {
@@ -60,6 +61,13 @@ namespace Pocztowy.ConsoleClient
                 NumberOrder = "ZAM 001",
             };
 
+            order.Add(product);
+
+            var orderCalculator = new FridayDiscountCalculator();
+
+            decimal discount = orderCalculator.CalculateDiscount(order);
+
+            Console.WriteLine(discount);
 
         }
 

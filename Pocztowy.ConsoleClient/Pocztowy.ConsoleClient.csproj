@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pocztowy.Calculators\Pocztowy.Calculators.csproj" />
     <ProjectReference Include="..\Pocztowy.FakeRepositories\Pocztowy.FakeRepositories.csproj" />
   </ItemGroup>
 
