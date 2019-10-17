@@ -19,7 +19,11 @@ namespace Pocztowy.Calculators
             this.canDiscountStrategy = canDiscountStrategy ?? throw new ArgumentNullException(nameof(canDiscountStrategy));
             this.calculateDiscountStrategy = calculateDiscountStrategy ?? throw new ArgumentNullException(nameof(calculateDiscountStrategy));
         }
-
+        /// <summary>
+        /// oblicza rabat dla danej strategii
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
         public decimal CalculateDiscount(Order order)
         {
             if (canDiscountStrategy.CanDiscount(order))
