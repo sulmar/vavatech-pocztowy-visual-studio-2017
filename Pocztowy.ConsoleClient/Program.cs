@@ -34,9 +34,9 @@ namespace Pocztowy.ConsoleClient
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Branch aszatkowski");
 
             Console.WriteLine("Hello Marcin");
-
             byte x = 255;
 
             checked

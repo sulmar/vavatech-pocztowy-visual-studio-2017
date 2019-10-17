@@ -14,6 +14,8 @@ namespace Pocztowy.UnitTests
         [InlineData(1000, 0.5, 500)]
         [InlineData(0, 0.5, 0)]
         [InlineData(0.1, 0.5, 0.05)]
+        [InlineData(0.2, 0.5, 0.10)]
+        [InlineData(0.1, 0.5, 0.00)]
         public void PercentageDiscountCalculateStrategyTest(
             decimal unitPrice,
             decimal percentage,
@@ -81,6 +83,8 @@ namespace Pocztowy.UnitTests
             result.Should().Be(expected);
         }
 
+        public void GitHubTest_AL(string date, bool expected)
+        {}
 
     }
 }
