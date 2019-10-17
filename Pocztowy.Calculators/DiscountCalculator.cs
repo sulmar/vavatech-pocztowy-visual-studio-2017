@@ -7,7 +7,11 @@ namespace Pocztowy.Calculators
     {
         private readonly ICanDiscountStrategy canDiscountStrategy;
         private readonly ICalculateDiscountStrategy calculateDiscountStrategy;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="canDiscountStrategy">implementacja interfejsu can</param>
+        /// <param name="calculateDiscountStrategy">implementacja interfejsu caculate</param>
         public DiscountCalculator(
             ICanDiscountStrategy canDiscountStrategy, 
             ICalculateDiscountStrategy calculateDiscountStrategy)
