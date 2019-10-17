@@ -10,7 +10,7 @@ namespace Pocztowy.UnitTests
     {
         
 
-        [Theory(DisplayName = "Weryfikacja promocji 50%")]
+        [Theory(DisplayName = "Weryfikacja rabatu procentowego")]
         [InlineData(1000, 0.5, 500)]
         [InlineData(0, 0.5, 0)]
         [InlineData(0.1, 0.5, 0.05)]
