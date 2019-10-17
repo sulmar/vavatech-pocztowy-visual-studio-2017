@@ -63,7 +63,16 @@ namespace Pocztowy.ConsoleClient
 
             order.Add(product);
 
-            var orderCalculator = new FridayDiscountCalculator();
+            ICanDiscountStrategy canDiscountStrategy = new HappyHoursCanDiscountStrategy(
+                from: TimeSpan.Parse("09:30"),
+                to: TimeSpan.Parse("17:00"),
+                minimumAmount: 100m
+                );
+
+            ICalculateDiscountStrategy calculateDiscountStrategy = new FixedCalculateDiscountStrategy(10);
+    
+            IDiscountCalculator orderCalculator
+                = new DiscountCalculator(canDiscountStrategy, calculateDiscountStrategy);
 
             decimal discount = orderCalculator.CalculateDiscount(order);
 

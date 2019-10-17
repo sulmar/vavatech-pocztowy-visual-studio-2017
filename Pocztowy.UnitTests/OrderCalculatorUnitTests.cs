@@ -8,61 +8,28 @@ namespace Pocztowy.UnitTests
 {
     public class OrderCalculatorUnitTests
     {
-        [Fact(DisplayName = "Weryfikacja promocji 50% w pi¹tek")]
-        public void DiscountCalculateTest()
-        {
-            // Arrange
-            Product product = new Product
-            {
-                Name = "Keyboard",
-                Color = "Black",
-                UnitPrice = 1000,
-            };
-
-            Order order = new Order
-            {
-                CreateDate = DateTime.Parse("2019-10-18"),
-                NumberOrder = "ZAM 001",
-            };
-
-            order.Add(product);
-
-            var orderCalculator = new FridayDiscountCalculator();
-
-            // Act
-
-            decimal result = orderCalculator.CalculateDiscount(order);
-
-
-            // Assert
-
-            //  Assert.Equal(500, result);
-
-            result.Should().Be(500, "50% upustu");
-
-            // dotnet add package FluentAssertions
-        }
+        
 
         [Theory(DisplayName = "Weryfikacja promocji 50%")]
-        [InlineData("2019-10-18", 1000, 500)]
-        [InlineData("2019-10-17", 1000, 0)]
-        public void DiscountCalculateTests(
-            string orderDate,
+        [InlineData(1000, 0.5, 500)]
+        [InlineData(0, 0.5, 0)]
+        [InlineData(0.1, 0.5, 0.05)]
+        public void PercentageDiscountCalculateStrategyTest(
             decimal unitPrice,
+            decimal percentage,
             decimal expected)
         {
             // Arrange
-            Order order = CreateOrderWith1Product(orderDate, unitPrice);
+            Order order = CreateOrderWith1Product("2019-10-17", unitPrice);
 
-            var orderCalculator = new FridayDiscountCalculator();
+            ICalculateDiscountStrategy calculateDiscountStrategy 
+                = new PercentageCalculateDiscountStrategy(percentage);
 
             // Act
 
-            decimal result = orderCalculator.CalculateDiscount(order);
-
-
+            decimal result = calculateDiscountStrategy.CalculateDiscount(order);
             // Assert
-            result.Should().Be(expected, "50% upustu");
+            result.Should().Be(expected, "upust");
 
             // dotnet add package FluentAssertions
         }
@@ -89,8 +56,8 @@ namespace Pocztowy.UnitTests
         [Fact]
         public void DayOfWeekStrategyCanDiscountTest()
         {
-            IDiscountStrategy discountStrategy
-                = new DayOfWeekDiscountStrategy(DayOfWeek.Friday, 0.5m);
+            ICanDiscountStrategy discountStrategy
+                = new DayOfWeekCanDiscountStrategy(DayOfWeek.Friday);
 
             Order order = CreateOrderWith1Product("2019-10-18", 1000);
 
@@ -99,17 +66,19 @@ namespace Pocztowy.UnitTests
             
         }
 
-        [Fact]
-        public void DayOfWeekStrategyCalculateDiscountTest()
+        [Theory]
+        [InlineData("2019-10-17", false)]
+        [InlineData("2019-10-18", true)]
+        public void DayOfWeekStrategyTest(string date, bool expected)
         {
-            IDiscountStrategy discountStrategy
-                = new DayOfWeekDiscountStrategy(DayOfWeek.Friday, 0.5m);
+            ICanDiscountStrategy discountStrategy
+                = new DayOfWeekCanDiscountStrategy(DayOfWeek.Friday);
 
-            Order order = CreateOrderWith1Product("2019-10-18", 1000);
+            Order order = CreateOrderWith1Product(date, 1000);
 
-            decimal discount = discountStrategy.CalculateDiscount(order);
+            bool result = discountStrategy.CanDiscount(order);
 
-            discount.Should().Be(500);
+            result.Should().Be(expected);
         }
 
 

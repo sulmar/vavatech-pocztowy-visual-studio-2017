@@ -3,22 +3,24 @@ using System;
 
 namespace Pocztowy.Calculators
 {
-    
-
     public class DiscountCalculator : IDiscountCalculator
     {
-        private IDiscountStrategy discountStrategy;
+        private readonly ICanDiscountStrategy canDiscountStrategy;
+        private readonly ICalculateDiscountStrategy calculateDiscountStrategy;
 
-        public DiscountCalculator(IDiscountStrategy discountStrategy)
+        public DiscountCalculator(
+            ICanDiscountStrategy canDiscountStrategy, 
+            ICalculateDiscountStrategy calculateDiscountStrategy)
         {
-            this.discountStrategy = discountStrategy ?? throw new ArgumentNullException(nameof(discountStrategy));
+            this.canDiscountStrategy = canDiscountStrategy ?? throw new ArgumentNullException(nameof(canDiscountStrategy));
+            this.calculateDiscountStrategy = calculateDiscountStrategy ?? throw new ArgumentNullException(nameof(calculateDiscountStrategy));
         }
 
         public decimal CalculateDiscount(Order order)
         {
-            if (discountStrategy.CanDiscount(order))
+            if (canDiscountStrategy.CanDiscount(order))
             {
-                return discountStrategy.CalculateDiscount(order);
+                return calculateDiscountStrategy.CalculateDiscount(order);
             }
             else
                 return 0m;
