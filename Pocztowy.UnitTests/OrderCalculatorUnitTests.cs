@@ -81,6 +81,8 @@ namespace Pocztowy.UnitTests
             result.Should().Be(expected);
         }
 
+        public void GitHubTest_AL(string date, bool expected)
+        {}
 
     }
 }
