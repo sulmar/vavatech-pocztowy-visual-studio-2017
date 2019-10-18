@@ -572,3 +572,80 @@ Odinstalowanie
 dotnet new -u C:\working\templates\consoleasync
 ~~~
 
+
+## Biblioteki
+
+- Fluent DateTime
+https://github.com/FluentDateTime/FluentDateTime
+
+
+## Klient HTTP
+
+~~~ bash
+dotnet add package ServiceStack.HttpClient
+~~~
+
+~~~ csharp
+public async Task<IEnumerable<Customer>> Get()
+{
+    var url = $"{baseUri}/api/customers";
+
+    var json = await url.GetJsonFromUrlAsync();
+
+    var customers = json.FromJson<ICollection<Customer>>();
+
+    return customers;
+}
+~~~
+
+~~~ csharp
+public async Task<Customer> Get(int id)
+{
+    var url = $"{baseUri}/api/customers/{id}";
+
+    var json = await url.GetJsonFromUrlAsync();
+
+    var customer = json.FromJson<Customer>();
+
+    return customer;
+}
+~~~
+
+#### Przekazywanie wielu parametrów
+~~~
+ public async Task<IEnumerable<Customer>> Get(CustomerSearchCriteria customerSearchCriteria)
+        {
+            var url = $"{baseUri}/api/customers";
+
+            url = AddQueryCustomerParams(customerSearchCriteria, url);
+
+            var json = await url.GetJsonFromUrlAsync();
+
+            var customers = json.FromJson<ICollection<Customer.Domain.Customer>>();
+
+            return customers;
+        }
+
+        private static string AddQueryCustomerParams(CustomerSearchCriteria searchCriteria, string url)
+        {
+            if (!string.IsNullOrEmpty(searchCriteria.CustomerNumber))
+                url = url.AddQueryParam(nameof(CustomerSearchCriteria.CustomerNumber), searchCriteria.CustomerNumber);
+
+            if (!string.IsNullOrEmpty(searchCriteria.ShortName))
+                url = url.AddQueryParam(nameof(CustomerSearchCriteria.ShortName), searchCriteria.ShortName);
+
+            if (!string.IsNullOrEmpty(searchCriteria.FullName))
+                url = url.AddQueryParam(nameof(CustomerSearchCriteria.FullName), searchCriteria.FullName);
+
+            if (!string.IsNullOrEmpty(searchCriteria.TaxId))
+                url = url.AddQueryParam(nameof(CustomerSearchCriteria.TaxId), searchCriteria.TaxId);
+
+            if (!string.IsNullOrEmpty(searchCriteria.Address))
+                url = url.AddQueryParam(nameof(CustomerSearchCriteria.Address), searchCriteria.Address);
+
+            if (!string.IsNullOrEmpty(searchCriteria.City))
+                url = url.AddQueryParam(nameof(CustomerSearchCriteria.City), searchCriteria.City);
+            return url;
+        }
+~~~
+
