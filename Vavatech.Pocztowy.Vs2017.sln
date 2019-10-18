@@ -11,13 +11,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pocztowy.FakeRepositories",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pocztowy.IRepositories", "Pocztowy.IRepositories\Pocztowy.IRepositories.csproj", "{BFED91B1-4FE3-4307-92EA-E4B87E3015DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pocztowy.Calculators", "Pocztowy.Calculators\Pocztowy.Calculators.csproj", "{12E7C034-6740-4D64-B2FA-1E00054BC4C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pocztowy.Calculators", "Pocztowy.Calculators\Pocztowy.Calculators.csproj", "{12E7C034-6740-4D64-B2FA-1E00054BC4C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pocztowy.UnitTests", "Pocztowy.UnitTests\Pocztowy.UnitTests.csproj", "{A0195E8F-0983-4603-B0D7-B1FE296BF690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pocztowy.UnitTests", "Pocztowy.UnitTests\Pocztowy.UnitTests.csproj", "{A0195E8F-0983-4603-B0D7-B1FE296BF690}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pocztowy.WebApi", "Pocztowy.WebApi\Pocztowy.WebApi.csproj", "{49958791-F22E-489E-8B02-B1DC029A267E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pocztowy.WebApi", "Pocztowy.WebApi\Pocztowy.WebApi.csproj", "{49958791-F22E-489E-8B02-B1DC029A267E}"
 EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
