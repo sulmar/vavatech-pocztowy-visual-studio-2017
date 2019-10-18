@@ -57,3 +57,8 @@ https://docs.microsoft.com/pl-pl/aspnet/core/test/integration-tests?view=aspnetc
 - 10 zl taniej 
 
 
+## Skrypty
+- z użyciem Roslyn
+https://github.com/dotnet/roslyn/wiki/Scripting-API-Samples#delegate
+
+
