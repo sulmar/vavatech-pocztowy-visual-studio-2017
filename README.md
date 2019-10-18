@@ -585,6 +585,8 @@ https://github.com/FluentDateTime/FluentDateTime
 dotnet add package ServiceStack.HttpClient
 ~~~
 
+
+### Pobranie listy
 ~~~ csharp
 public async Task<IEnumerable<Customer>> Get()
 {
@@ -597,6 +599,9 @@ public async Task<IEnumerable<Customer>> Get()
     return customers;
 }
 ~~~
+
+
+### Pobranie pojedynczego obiektu
 
 ~~~ csharp
 public async Task<Customer> Get(int id)
@@ -612,7 +617,7 @@ public async Task<Customer> Get(int id)
 ~~~
 
 #### Przekazywanie wielu parametrów
-~~~
+~~~ csharp
  public async Task<IEnumerable<Customer>> Get(CustomerSearchCriteria customerSearchCriteria)
         {
             var url = $"{baseUri}/api/customers";
