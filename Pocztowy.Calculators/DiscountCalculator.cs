@@ -1,9 +1,11 @@
 ﻿using Pocztowy.Models;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Pocztowy.Calculators
 {
-    public class DiscountCalculator : IDiscountCalculator
+    public class DiscountCalculator : IDiscountCalculator, IDiscountCalculatorAsync
     {
         private readonly ICanDiscountStrategy canDiscountStrategy;
         private readonly ICalculateDiscountStrategy calculateDiscountStrategy;
@@ -26,12 +28,25 @@ namespace Pocztowy.Calculators
         /// <returns></returns>
         public decimal CalculateDiscount(Order order)
         {
+            if (order == null)
+                throw new ArgumentNullException(nameof(order));
+
+            if (order.Total <= 0)
+                throw new ArgumentOutOfRangeException(nameof(order.Total));
+
             if (canDiscountStrategy.CanDiscount(order))
             {
+                Thread.Sleep(TimeSpan.FromMilliseconds(100));
+
                 return calculateDiscountStrategy.CalculateDiscount(order);
             }
             else
                 return 0m;
+        }
+
+        public Task<decimal> CalculateDiscountAsync(Order order)
+        {
+            return Task.Run(() => CalculateDiscount(order));
         }
     }
 }
