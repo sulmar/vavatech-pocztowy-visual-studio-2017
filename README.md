@@ -674,3 +674,27 @@ public async Task<Customer> Get(int id)
         }
 ~~~
 
+### Refit
+
+https://reactiveui.github.io/refit/
+
+
+- Instalacja
+~~~ bash
+dotnet add package refit 
+~~~
+Generuje klienta HTTP na podstawie interfejsu
+
+~~~ csharp
+public interface ICustomerService
+{
+    [Get("/customers/{id}")]
+    Task<UCustomer> Get(int id);
+}
+~~~
+
+~~~ csharp
+var client = RestService.For<ICustomerService>("https://localhost:5000");
+var customer = await client.Get(100);
+~~~
+
