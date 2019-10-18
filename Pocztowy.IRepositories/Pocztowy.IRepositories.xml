@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pocztowy.IRepositories</name>
+    </assembly>
+    <members>
+        <member name="M:Pocztowy.IRepositories.ICustomerRepository.Get(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="city"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

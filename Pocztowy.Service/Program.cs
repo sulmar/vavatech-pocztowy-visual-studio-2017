@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pocztowy.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,13 @@ namespace Pocztowy.Service
     class Program
     {
         static void Main(string[] args)
+        {
+            //  CreateService();
+
+           
+        }
+
+        private static void CreateService()
         {
             HostFactory.Run(
                 s =>

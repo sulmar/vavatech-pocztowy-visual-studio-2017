@@ -69,5 +69,11 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pocztowy.Models\Pocztowy.Models.csproj">
+      <Project>{D5393C51-0D5C-443C-881C-CB75CDB06420}</Project>
+      <Name>Pocztowy.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

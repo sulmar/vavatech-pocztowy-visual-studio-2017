@@ -69,12 +69,24 @@ namespace Pocztowy.ConsoleClient
 
     class Program
     {
-        
+        static CustomerDTO Map(Customer customer)
+        {
+            return new CustomerDTO()
+            {
+                Id = customer.Id,
+                FirstName = customer.FirstName,
+                LastName = customer.LastName,
+                HomeAddress = new AddressDTO(city: customer.HomeAddress.City, street: customer.HomeAddress.Street),
+                WorkAddress = new AddressDTO(city: customer.WorkAddress.City, street: customer.WorkAddress.Street)
+            };
+        }
 
         static void Main(string[] args)
         {
-            IReportBuilder reportBuilder1 = new StringReportBuilder();
 
+            Customer customer = new Customer("John", "Smith", 18);
+            
+            IReportBuilder reportBuilder1 = new StringReportBuilder();
             IReportBuilder reportBuilder2 = new StringBuilderReportBuilder();
 
             Task t1 = Task.Run(() => reportBuilder1.Build());

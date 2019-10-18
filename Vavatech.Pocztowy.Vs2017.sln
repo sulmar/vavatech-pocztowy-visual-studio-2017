@@ -19,10 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pocztowy.WebApi", "Pocztowy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pocztowy.Service", "Pocztowy.Service\Pocztowy.Service.csproj", "{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pocztowy.Api", "Pocztowy.Api\Pocztowy.Api.csproj", "{536B54A8-218B-46BD-A7DF-A000047E00C0}"
+EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -128,11 +127,26 @@ Global
 		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Release|x64.Build.0 = Release|Any CPU
 		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Release|x86.ActiveCfg = Release|Any CPU
 		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Release|x86.Build.0 = Release|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Debug|x64.Build.0 = Debug|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Debug|x86.Build.0 = Debug|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Release|x64.ActiveCfg = Release|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Release|x64.Build.0 = Release|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Release|x86.ActiveCfg = Release|Any CPU
+		{536B54A8-218B-46BD-A7DF-A000047E00C0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90CC9487-6E84-446D-9292-4F81F8FE2A15}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

@@ -6,6 +6,29 @@ using System.Collections;
 namespace Pocztowy.Models
 {
 
+    public class CustomerDTO
+    {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public AddressDTO HomeAddress { get; set; }
+        public AddressDTO WorkAddress { get; set; }
+    }
+
+    public class AddressDTO
+    {
+        public AddressDTO(string city, string street)
+        {
+            City = city ?? throw new ArgumentNullException(nameof(city));
+            Street = street ?? throw new ArgumentNullException(nameof(street));
+        }
+
+        public string City { get;  }
+        public string Street { get; }
+
+    }
+
+
     // Ctrl+[, S
     public class Customer : BaseEntity
     {
