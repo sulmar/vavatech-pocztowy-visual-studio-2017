@@ -471,3 +471,104 @@ net stop MyService
 ~~~
 MyService.exe uninstall
 ~~~
+
+
+
+## Szablony
+
+### Tworzenie szablonu
+
+1. Utwórz projekt
+
+~~~ bash
+dotnet new console -output consoleasync
+~~~
+
+
+~~~
+working
+└───templates
+    └───consoleasync
+            consoleasync.csproj
+            Program.cs
+~~~
+
+2. Zmodyfikuj _Program.cs_
+
+~~~ csharp
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        await Console.Out.WriteLineAsync("Hello World with C# 8.0!");
+    }      
+}
+~~~
+
+3. Zmodyfikuj plik _consoleasync.csproj_
+~~~ xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <LangVersion>8.0</LangVersion>
+
+  </PropertyGroup>
+
+</Project>
+~~~
+
+4. Utwórz folder _.template.config_ 
+
+~~~ 
+working
+└───templates
+    └───consoleasync
+        └───.template.config
+                template.json
+~~~
+           
+5. Utwórz plik _template.json_ w katalogu _.template.config_ 
+
+~~~ json
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Me",
+  "classifications": [ "Common", "Console", "C#8" ],
+  "identity": "ExampleTemplate.AsyncProject",
+  "name": "Example templates: async project",
+  "shortName": "consoleasync",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
+        
+~~~
+   
+6. Zainstaluj szablon
+~~~ bash
+dotnet new -i .\
+~~~   
+
+### Testowanie szablonu
+
+~~~
+dotnet new consoleasync
+~~~
+
+### Odinstalowanie szablonu
+W celu odinstalowania szablonu należy podać pełną ścieżkę.
+
+Wyświetlenie pełnych ścieżek
+~~~
+dotnet new -u
+~~~
+
+Odinstalowanie
+~~~
+dotnet new -u C:\working\templates\consoleasync
+~~~
+
