@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pocztowy.UnitTests", "Poczt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pocztowy.WebApi", "Pocztowy.WebApi\Pocztowy.WebApi.csproj", "{49958791-F22E-489E-8B02-B1DC029A267E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pocztowy.Service", "Pocztowy.Service\Pocztowy.Service.csproj", "{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}"
+EndProject
 Global
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
@@ -114,6 +116,18 @@ Global
 		{49958791-F22E-489E-8B02-B1DC029A267E}.Release|x64.Build.0 = Release|Any CPU
 		{49958791-F22E-489E-8B02-B1DC029A267E}.Release|x86.ActiveCfg = Release|Any CPU
 		{49958791-F22E-489E-8B02-B1DC029A267E}.Release|x86.Build.0 = Release|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Debug|x64.Build.0 = Debug|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Debug|x86.Build.0 = Debug|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Release|x64.ActiveCfg = Release|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Release|x64.Build.0 = Release|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Release|x86.ActiveCfg = Release|Any CPU
+		{1C15EEB9-58EE-49B6-88CE-B62AECFB3B69}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
