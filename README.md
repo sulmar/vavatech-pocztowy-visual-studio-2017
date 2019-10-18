@@ -408,3 +408,66 @@ public void CalculateAsyncTest()
 ~~~
 
 
+## Roslyn
+
+- Roslynator 2017
+https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2017
+
+
+- MappingGenerator
+https://marketplace.visualstudio.com/items?itemName=54748ff9-45fc-43c2-8ec5-cf7912bc3b84.mappinggenerator
+
+- Productivity Power Tools 2017/2019
+https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.ProductivityPowerPack2017
+
+- Solution Error Visualizer
+https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.SolutionErrorVisualizer
+
+## TopShelf
+
+### Instalacja
+~~~ powershell
+Install-Package TopShelf
+~~~
+
+~~~ powershell
+Install-Package TopShelf.NLog
+~~~
+
+### Tworzenie usługi
+
+~~~ csharp
+private static void Main(string[] args)
+{
+  HostFactory.Run(x =>
+  {
+    x.SetServiceName("MyService");
+    x.SetDisplayName("MyService");
+    x.SetDescription("This is sample service powered by TopShelf.");
+    x.StartAutomatically();
+    x.UseNLog();
+    x.Service(service =>
+    {
+      service.ConstructUsing(srv => new MyService());
+      service.WhenStarted(srv => srv.Start());
+      service.WhenStopped(srv => srv.Stop());
+    });
+  });
+}
+~~~
+
+### Instalacja usługi
+~~~
+MyService.exe install
+~~~
+
+### Uruchomienie i zatrzymanie usługi
+~~~
+net start MyService
+net stop MyService
+~~~
+
+### Deinstalacja usługi
+~~~
+MyService.exe uninstall
+~~~
