@@ -1,5 +1,10 @@
 ## Skróty klawiszowe Visual Studio 2017
 
+### Testy integracyjne
+
+https://docs.microsoft.com/pl-pl/aspnet/core/test/integration-tests?view=aspnetcore-3.0
+
+
 ### Edytor
 
 | Skrót  | Opis  |
@@ -50,4 +55,5 @@
 3. Happy Hours
 - jesli pomiedzy 9 - 17 i wartosc zakupow powyzej 100
 - 10 zl taniej 
+
 
