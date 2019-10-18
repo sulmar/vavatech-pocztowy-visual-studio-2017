@@ -581,12 +581,32 @@ https://github.com/FluentDateTime/FluentDateTime
 
 ## Klient HTTP
 
+### HttpClient
+Standardowa klasa. HttpClientFactory
+
+~~~
+public async Task<Customer> Get(int id)
+{
+   var url = $"{baseUri}/api/customers/{id}";
+ 
+    HttpResponseMessage response = await client.GetAsync(url);
+    if (response.IsSuccessStatusCode)
+    {
+       return await response.Content.ReadAsAsync<Customer>();
+    }
+   
+}
+~~~
+
+### Klient ServiceStack.HttpClient
+Upraszcza tworzenie żądań HTTP
+
 ~~~ bash
 dotnet add package ServiceStack.HttpClient
 ~~~
 
 
-### Pobranie listy
+#### Pobranie listy
 ~~~ csharp
 public async Task<IEnumerable<Customer>> Get()
 {
@@ -601,7 +621,7 @@ public async Task<IEnumerable<Customer>> Get()
 ~~~
 
 
-### Pobranie pojedynczego obiektu
+#### Pobranie pojedynczego obiektu
 
 ~~~ csharp
 public async Task<Customer> Get(int id)
